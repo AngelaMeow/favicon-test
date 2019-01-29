@@ -1,0 +1,1361 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Letter</title>
+<link rel="stylesheet" href="https://use.typekit.net/hqh1ues.css">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #211915;
+      width: 8.5in;
+      height: 11in;
+      margin: 0;
+      padding: 0;
+      font-family: "proxima-nova", sans-serif;
+      font-size: 10pt;
+      line-height: 14pt;
+    }
+
+    .page {
+      page-break-after: always;
+      position: relative;
+      width: 8.5in!important;
+      height: 11in!important;
+    }
+
+    .page-content {
+      position: absolute;
+      width: 8.125in;
+      height: 10.625in;
+      left: 0.1875in;
+      top: 0.6075in;
+    }
+
+    .text {
+      position: relative;
+      left: .5in;
+      top: 20px;
+      width: 7in;
+      font-size: .18in;
+      line-height: .2in;
+    }
+
+    #return-address-window {
+      position: absolute;
+      left: .625in;
+      top: .5in;
+      width: 3.25in;
+      height: .875in;
+      background-color: rgba(255,0,0,0.5);
+    }
+
+    #return-address-text {
+      position: absolute;
+      left: .07in;
+      top: .34in;
+      width: 2.05in;
+      height: .44in;
+      font-size: .11in;
+    }
+
+    #return-logo {
+      position: absolute;
+      left: .07in;
+      top: .02in;
+      width: 2.05in;
+      height: .3in;
+    }
+
+    #recipient-address-window {
+      position: absolute;
+      left: .625in;
+      top: 1.7in;
+      width: 4in;
+      height: 1in;
+      background-color: rgba(255,0,0,0.5);
+    }
+
+    #recipient-address-text {
+      position: absolute;
+      left: .07in;
+      top: .05in;
+      width: 2.92in;
+      height: .9in;
+    }
+
+    #white-box {
+      background-color: white;
+      width: 3.15in;
+      height: 2in;
+      position: absolute;
+      left: .6in;
+      top: .84in;
+    }
+
+    #logo {
+      position: absolute;
+      right: 0;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 2.75in;
+      width: 100%;
+    }
+
+    .transaction-box {
+      width: 4in;
+      margin-right: .05in;
+      float: left;
+      background-color: #F0F0F0;
+      padding: .1in;
+      text-align: left;
+      height: 4.4in;
+      margin-bottom: .1in;
+      position: absolute;
+    }
+
+    .top-left, .top-right {
+      top: .95in;
+    }
+
+    .top-left,.bottom-left {
+      left: 0;
+    }
+
+    .top-right,.bottom-right {
+      right: 0;
+    }
+
+    .bottom-left,.bottom-right {
+      bottom: 0.65in;
+    }
+
+    .transaction-box .text{
+      left: 0!important;
+      width: 100%;
+      top: 0;
+      font-size: .14in;
+      line-height: .15in;
+    }
+
+    .transaction-box .text-fixed {
+      position: absolute;
+      top: 1.45in;
+      padding: 0 8pt!important;
+      width: auto;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    ul.interest li {
+      width: 50%;
+      float: left;
+    }
+
+    .interest strong{
+      font-size: .14in;
+    }
+
+    li .text {
+      top: 0;
+      left: 0;
+      margin: .05in 0;
+    }
+
+    .check {
+      display: block;
+      position: absolute;
+      left: 0;
+      height: 15px;
+      width: 15px;
+    }
+
+    .check.small {
+      height: 12px;
+      width: 12px;
+    }
+
+    .signature {
+      position: absolute;
+      bottom: .1in;
+      padding-bottom: 0.1875in;
+    }
+
+    .signature .text {
+      left: 0;
+      font-size: .14in;
+    }
+
+    .signature ul.text {
+     width: 7.5in;
+    }
+
+    .signature li {
+      float: left;
+      width: 48%;
+      margin-right: 1%;
+    }
+
+    .signature li:first-child {
+      padding: 0;
+    }
+
+    .signature li .text {
+      top: 0;
+      margin: 0;
+    }
+
+    .text-red {
+      color: #8c1d1d;
+    }
+
+    .section-perforated {
+      position: absolute;
+      border-top: 1px dashed #DDD;
+      bottom: 0;
+      width: 100%;
+      height: 3.6213in;
+    }
+
+    .return-address-perforated {
+      display: block;
+      position: absolute;
+      border: 1px solid #DDDDDD;
+      height: 1.12in;
+      width: 4.25in;
+      bottom: 0.5in;
+      left: 0.875in;
+      padding: .15in .25in;
+    }
+
+    .return-address-perforated span {
+      display: block;
+      text-transform: uppercase;
+      font-size: .15in;
+    }
+
+    .account-info {
+      display: block;
+      position: absolute;
+      left: 0.875in;
+      top: 7.5in;
+      width: 3in;
+    }
+
+    .account-new-info {
+      display: block;
+      position: absolute;
+      right: 0.5in;
+      top: 7.5in;
+      width: 4in;
+      padding: .05in .1in .4in;
+      font-size: 10pt;
+      border: 1px solid #555;
+    }
+
+    .account-new-info h4,
+    .account-new-info p {
+      display: inline;
+      margin: 0;
+    }
+
+    .account-new-info strong {
+      display: block;
+      font-size: .15in;
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .account-details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .account-details li {
+      margin: 0;
+      display: inline-block;
+      padding: 0 30px 0 0;
+    }
+
+    .account-details li strong {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="page-content">
+      <img id="logo" src="https://www.calvertimpactcapital.org/storage/images/IR-2017/CalvertImpactCapital_logo.png" width="250px" />
+
+      <div class='wrapper'>
+        <p class="text">Jan 29, 2019</p>
+
+        <p class="text">Dear Community Investor,</p>
+
+        <p class="text">Thank you for investing to create impact in communities. An anniversary or maturity date is approaching for your Community Investment Note(s) and we will soon be processing one or more payments to you. Please take a minute to choose from the options listed on the other side of this letter and return the tear-off portion to us before the indicated date. You can also access your account and select from these options on our website <strong>www.CalvertImpactCapital.org</strong></p>
+
+        <p class="text">If you have any questions please contact us by emailing <strong>info@calvertimpactcapital.org</strong> or calling <strong>1-800-248-0337</strong>.</p>
+
+        <p class="text">Best regards,</p>
+        <p class="text">Your Investor Relations Team</p>
+      </div>
+    </div>
+
+    <!-- This div represents a white box which will be printed on top of all artwork to hold address and barcode information. Any content provided underneath this area will be covered. -->
+    <div id="white-box"></div>
+
+
+    <div class="section-j">
+      <div class="return-address-perforated">
+        <span>Calvert Impact Capital</span>
+        <span>7315 Wisconsin Ave</span>
+        <span>Suite 1000W</span>
+        <span>Bethesda, MD 20814</span>
+      </div>
+
+      <div class="account-info">
+        <table class="text-left" style="font-size: 10pt;">
+          <tr>
+            <th>Account:</th>
+            <td>A102</td>
+          </tr>
+          <tr>
+            <th>Account name:
+            </th>
+            <td>institution acc 34</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Primary phone number:</th>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="account-new-info">
+        <h4 class="text-red">Changed address or other details?</h4>
+        <p class="text-red">Please write the correct information here:</p>
+        <strong>Email:</strong>
+        <strong>Primary phone number:</strong>
+        <strong>Address:</strong>
+      </div>
+    </div>
+  </div>
+  <div class="page"></div>
+  <div class="page">
+    <div class="page-content">
+
+        <p>Please return this options form, or access your account online to make these selections at www.CalvertImpactCapital.org, before <strong class="text-red"></strong>.
+        </p>
+        <ul class="account-details">
+          <li><strong>Account number:</strong><span>A102</span></li>
+          <li><strong>Account name:</strong><span>institution acc 34</span></li>
+        </ul>
+
+        <div class="transaction-box top-left">
+    <table style="font-family: 'proxima-nova', sans-serif; text-align: left; font-size: .12in;">
+      <tr>
+        <th>Note:</th>
+        <td>N176A</td>
+      </tr>
+      <tr>
+        <th>Principal Amount:</th>
+        <td>0</td>
+      </tr>
+      
+      <tr>
+        <th>Interest Rate:</th>
+        <td>1.5%</td>
+      </tr>
+      <tr>
+        <th>Term:</th>
+        <td>1 years</td>
+      </tr>
+      
+      <tr>
+        <th>Maturity Date:</th>
+        <td>01/09/2020</td>
+      </tr>
+
+    </table>
+    <p class="text text-fixed">Your <strong class="text-red">
+    $500 Note</strong> matures on <strong class="text-red">Jan 9, 2020</strong>.
+    Please select from your options below. If we do not receive instructions before the transaction date,
+    it will be <strong class="text-red">repaid </strong>  to the default payment destination below.
+
+    <div style="position:absolute; top: 2.45in;">
+
+        <p class="text"><strong>Please select one option for your maturing Note:</strong></p>
+
+        <ul>
+          <li>
+                <svg viewBox="0 0 23 23" class="check">
+                    <defs>
+                        <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1 23,12 C23,5.9
+                        18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17
+                        17,21 12,21 Z" id="path-2"></path>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                            <mask id="mask-1" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            <p class="text"><strong>I would like to reinvest my Note for:</strong></p>
+            <ul class="interest">
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3
+                          12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>0.0%, ____ years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                           21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>2.0%, 5 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                          21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.0%, 1 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17
+                          3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>3.0%, 10 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12
+                          C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.5%, 3 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                          23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3
+                          C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>4.0%, 15 years</strong>
+                </li>
+            </ul>
+          </li>
+
+          <li class="clearfix">
+              <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                    23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3
+                     21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-1" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                        <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text"><strong>Repay my Note to the default destination:</strong></p>
+            <p class="text" style="margin-left: 20pt;"><strong>------</strong></p>
+          </li>
+          
+          <li>
+          <li class="clearfix">
+            <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                    23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                    21,12 C21,17 17,21 12,21 Z" id="path-3"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-3"></use>
+                        <g mask="url(#mask-3)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text">
+            <strong>Donate my Note to support Calver Impact Capital</strong></p>
+          </li>
+
+        </ul>
+      </div>
+    </div><div class="transaction-box top-right">
+    <table style="font-family: 'proxima-nova', sans-serif; text-align: left; font-size: .12in;">
+      <tr>
+        <th>Note:</th>
+        <td>N176A</td>
+      </tr>
+      <tr>
+        <th>Principal Amount:</th>
+        <td>0</td>
+      </tr>
+      <tr>
+          <th>Interest Payment Date:</th>
+          <td>01/09/2020</td>
+          </tr>
+      <tr>
+        <th>Interest Rate:</th>
+        <td>1.5%</td>
+      </tr>
+      <tr>
+        <th>Term:</th>
+        <td>1 years</td>
+      </tr>
+      <tr>
+          <th>Interest Payment Date:</th>
+          <td>500</td>
+          </tr>
+      <tr>
+        <th>Maturity Date:</th>
+        <td>01/09/2020</td>
+      </tr>
+
+    </table>
+    <p class="text text-fixed">Your <strong class="text-red">
+    $500 interest payment</strong> will be made on <strong class="text-red">Jan 9, 2020</strong>.
+    Please select from your options below. If we do not receive instructions before the transaction date,
+    it will be <strong class="text-red">donated </strong>  
+
+    <div style="position:absolute; top: 2.45in;">
+
+        <p class="text"><strong>Please select one option for your interest payment:</strong></p>
+
+        <ul>
+          <li>
+                <svg viewBox="0 0 23 23" class="check">
+                    <defs>
+                        <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1 23,12 C23,5.9
+                        18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17
+                        17,21 12,21 Z" id="path-2"></path>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                            <mask id="mask-1" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            <p class="text"><strong>I would like to reinvest my interest for:</strong></p>
+            <ul class="interest">
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3
+                          12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>0.0%, ____ years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                           21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>2.0%, 5 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                          21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.0%, 1 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17
+                          3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>3.0%, 10 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12
+                          C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.5%, 3 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                          23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3
+                          C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>4.0%, 15 years</strong>
+                </li>
+            </ul>
+          </li>
+
+          <li class="clearfix">
+              <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                    23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3
+                     21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-1" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                        <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text"><strong>Send my interest to the default destination:</strong></p>
+            <p class="text" style="margin-left: 20pt;"><strong>------</strong></p>
+          </li>
+          
+          <li>
+          <li class="clearfix">
+            <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                    23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                    21,12 C21,17 17,21 12,21 Z" id="path-3"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-3"></use>
+                        <g mask="url(#mask-3)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text">
+            <strong>Donate my interest to support Calver Impact Capital</strong></p>
+          </li>
+
+        </ul>
+      </div>
+    </div><div class="transaction-box bottom-left">
+    <table style="font-family: 'proxima-nova', sans-serif; text-align: left; font-size: .12in;">
+      <tr>
+        <th>Note:</th>
+        <td>N175A</td>
+      </tr>
+      <tr>
+        <th>Principal Amount:</th>
+        <td>0</td>
+      </tr>
+      <tr>
+          <th>Interest Payment Date:</th>
+          <td>01/09/2020</td>
+          </tr>
+      <tr>
+        <th>Interest Rate:</th>
+        <td>1.5%</td>
+      </tr>
+      <tr>
+        <th>Term:</th>
+        <td>1 years</td>
+      </tr>
+      <tr>
+          <th>Interest Payment Date:</th>
+          <td>500</td>
+          </tr>
+      <tr>
+        <th>Maturity Date:</th>
+        <td>01/09/2020</td>
+      </tr>
+
+    </table>
+    <p class="text text-fixed">Your <strong class="text-red">
+    $500 interest payment</strong> will be made on <strong class="text-red">Jan 9, 2020</strong>.
+    Please select from your options below. If we do not receive instructions before the transaction date,
+    it will be <strong class="text-red">repaid </strong>  to the default payment destination below.
+
+    <div style="position:absolute; top: 2.45in;">
+
+        <p class="text"><strong>Please select one option for your interest payment:</strong></p>
+
+        <ul>
+          <li>
+                <svg viewBox="0 0 23 23" class="check">
+                    <defs>
+                        <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1 23,12 C23,5.9
+                        18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17
+                        17,21 12,21 Z" id="path-2"></path>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                            <mask id="mask-1" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            <p class="text"><strong>I would like to reinvest my interest for:</strong></p>
+            <ul class="interest">
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3
+                          12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>0.0%, ____ years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                           21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>2.0%, 5 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                          21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.0%, 1 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17
+                          3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>3.0%, 10 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12
+                          C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.5%, 3 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                          23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3
+                          C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>4.0%, 15 years</strong>
+                </li>
+            </ul>
+          </li>
+
+          <li class="clearfix">
+              <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                    23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3
+                     21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-1" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                        <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text"><strong>Send my interest to the default destination:</strong></p>
+            <p class="text" style="margin-left: 20pt;"><strong>------</strong></p>
+          </li>
+          
+          <li>
+          <li class="clearfix">
+            <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                    23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                    21,12 C21,17 17,21 12,21 Z" id="path-3"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-3"></use>
+                        <g mask="url(#mask-3)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text">
+            <strong>Donate my interest to support Calver Impact Capital</strong></p>
+          </li>
+
+        </ul>
+      </div>
+    </div><div class="transaction-box bottom-right">
+    <table style="font-family: 'proxima-nova', sans-serif; text-align: left; font-size: .12in;">
+      <tr>
+        <th>Note:</th>
+        <td>N175A</td>
+      </tr>
+      <tr>
+        <th>Principal Amount:</th>
+        <td>0</td>
+      </tr>
+      
+      <tr>
+        <th>Interest Rate:</th>
+        <td>1.5%</td>
+      </tr>
+      <tr>
+        <th>Term:</th>
+        <td>1 years</td>
+      </tr>
+      
+      <tr>
+        <th>Maturity Date:</th>
+        <td>01/09/2020</td>
+      </tr>
+
+    </table>
+    <p class="text text-fixed">Your <strong class="text-red">
+    $500 Note</strong> matures on <strong class="text-red">Jan 9, 2020</strong>.
+    Please select from your options below. If we do not receive instructions before the transaction date,
+    it will be <strong class="text-red">donated </strong>  
+
+    <div style="position:absolute; top: 2.45in;">
+
+        <p class="text"><strong>Please select one option for your maturing Note:</strong></p>
+
+        <ul>
+          <li>
+                <svg viewBox="0 0 23 23" class="check">
+                    <defs>
+                        <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1 23,12 C23,5.9
+                        18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17
+                        17,21 12,21 Z" id="path-2"></path>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                            <mask id="mask-1" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                            <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            <p class="text"><strong>I would like to reinvest my Note for:</strong></p>
+            <ul class="interest">
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3
+                          12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>0.0%, ____ years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                           21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>2.0%, 5 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                          23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                          21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.0%, 1 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17
+                          3,12 C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>3.0%, 10 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23
+                          C18.1,23 23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12
+                          C3,7 7,3 12,3 C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>1.5%, 3 years</strong>
+                </li>
+                <li>
+                    <svg viewBox="0 0 23 23" class="check">
+                      <defs>
+                          <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                          23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3
+                          C17,3 21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                      </defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                              <mask id="mask-1" fill="white">
+                                  <use xlink:href="#path-2"></use>
+                              </mask>
+                              <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                              <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                                  <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                  <strong>4.0%, 15 years</strong>
+                </li>
+            </ul>
+          </li>
+
+          <li class="clearfix">
+              <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23
+                    23,18.1 23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3
+                     21,7 21,12 C21,17 17,21 12,21 Z" id="path-2"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-1" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-2"></use>
+                        <g mask="url(#mask-1)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text"><strong>Repay my Note to the default destination:</strong></p>
+            <p class="text" style="margin-left: 20pt;"><strong>------</strong></p>
+          </li>
+          
+          <li>
+          <li class="clearfix">
+            <svg viewBox="0 0 23 23" class="check">
+                <defs>
+                    <path d="M12,1 C5.9,1 1,5.9 1,12 C1,18.1 5.9,23 12,23 C18.1,23 23,18.1
+                    23,12 C23,5.9 18.1,1 12,1 Z M12,21 C7,21 3,17 3,12 C3,7 7,3 12,3 C17,3 21,7
+                    21,12 C21,17 17,21 12,21 Z" id="path-3"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="icon-/-circle" transform="translate(-0.449219, -0.675781)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Mask" fill="#8c1d1d" fill-rule="nonzero" xlink:href="#path-3"></use>
+                        <g mask="url(#mask-3)" fill="#8c1d1d" fill-rule="evenodd">
+                            <rect id="Shape" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <p class="text">
+            <strong>Donate my Note to support Calver Impact Capital</strong></p>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+        <div class="signature">
+            <p class="text"><strong>Please carry out the instructions expressed above and on the reverse of this sheet:
+              </strong></p>
+
+
+            <ul class="text">
+                <li>
+                    <p class="text"><strong>
+                        Signature: ______________________________
+                    </strong></p>
+                </li>
+                <li>
+                    <p class="text"><strong>
+                        Date: ______________________________
+                    </strong></p>
+                </li>
+
+              </ul>
+          </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
